@@ -9,10 +9,10 @@ void SampleScene::OnInitialize()
 	pEntity1 = CreateEntity<PlayerEntity>(100, sf::Color::Red);
 	pEntity1->SetPosition(100, 100);
 
-	pEntity2 = CreateEntity<PlayerEntity>(50, sf::Color::Green);
-	pEntity2->SetPosition(500, 500);
+	pEntity2 = CreateEntity<PlayerEntity>(100, sf::Color::Green);
+	pEntity2->SetPosition(100, 100);
 
-	pEntity3 = CreateEntity<BallEntity>(50, sf::Color::Green);
+	pEntity3 = CreateEntity<BallEntity>(50, sf::Color::Yellow);
 	pEntity3->SetPosition(640, 360);
 
 	pEntitySelected = nullptr;
