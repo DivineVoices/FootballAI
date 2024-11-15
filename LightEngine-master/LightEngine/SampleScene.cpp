@@ -1,16 +1,19 @@
 #include "SampleScene.h"
 
-#include "DummyEntity.h"
+#include "PlayerEntity.h"
 
 #include "Debug.h"
 
 void SampleScene::OnInitialize()
 {
-	pEntity1 = CreateEntity<DummyEntity>(100, sf::Color::Red);
+	pEntity1 = CreateEntity<PlayerEntity>(100, sf::Color::Red);
 	pEntity1->SetPosition(100, 100);
 
-	pEntity2 = CreateEntity<DummyEntity>(50, sf::Color::Green);
+	pEntity2 = CreateEntity<PlayerEntity>(50, sf::Color::Green);
 	pEntity2->SetPosition(500, 500);
+
+	pEntity3 = CreateEntity<BallEntity>(50, sf::Color::Green);
+	pEntity3->SetPosition(640, 360);
 
 	pEntitySelected = nullptr;
 }
@@ -35,7 +38,7 @@ void SampleScene::OnEvent(const sf::Event& event)
 	}
 }
 
-void SampleScene::TrySetSelectedEntity(DummyEntity* pEntity, int x, int y)
+void SampleScene::TrySetSelectedEntity(Entity* pEntity, int x, int y)
 {
 	if (pEntity->IsInside(x, y) == false)
 		return;

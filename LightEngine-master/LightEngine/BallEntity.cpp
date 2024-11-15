@@ -1,8 +1,8 @@
-#include "DummyEntity.h"
+#include "BallEntity.h"
 
 #include <iostream>
 
-void DummyEntity::OnCollision(Entity* other)
+void BallEntity::OnCollision(Entity* other)
 {
 	std::cout << "DummyEntity::OnCollision" << std::endl;
 }

@@ -1,10 +1,10 @@
 #pragma once
 #include "Entity.h"
 
-class DummyEntity : public Entity
+class PlayerEntity : public Entity
 {
 public:
-	DummyEntity(float radius, const sf::Color& color)
+	PlayerEntity(float radius, const sf::Color& color)
 		: Entity(radius, color)
 	{
 	}
