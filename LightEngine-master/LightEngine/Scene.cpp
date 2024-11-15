@@ -11,8 +11,3 @@ int Scene::GetWindowHeight() const
 {
 	return mpGameManager->mWindowHeight;
 }
-
-float Scene::GetDeltaTime() const
-{
-	return mpGameManager->mDeltaTime;
-}

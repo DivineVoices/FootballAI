@@ -15,7 +15,7 @@ class Entity
 {
     struct Target 
     {
-		sf::Vector2i position;
+		sf::Vector2f position;
         float distance;
 		bool isSet;
     };
@@ -29,15 +29,14 @@ protected:
     int mTag;
 
 public:
-	bool GoToDirection(int x, int y, float speed = -1.f);
-    bool GoToPosition(int x, int y, float speed = -1.f);
-    void SetPosition(float x, float y, float ratioX = 0.5f, float ratioY = 0.5f);
+	bool GoToDirection(float x, float y, float speed = -1.f);
+    bool GoToPosition(float x, float y, float speed = -1.f);
+    void SetPosition(float x, float y, float ratioX = 0.f, float ratioY = 0.f);
 	void SetDirection(float x, float y, float speed = -1.f);
 	void SetSpeed(float speed) { mSpeed = speed; }
 	void SetTag(int tag) { mTag = tag; }
-	float GetRadius() const { return mShape.getRadius(); }
 
-    sf::Vector2f GetPosition(float ratioX = 0.5f, float ratioY = 0.5f) const;
+    sf::Vector2f GetPosition(float ratioX = 0.f, float ratioY = 0.f) const;
 	sf::Shape* GetShape() { return &mShape; }
 
 	bool IsTag(int tag) const { return mTag == tag; }
@@ -51,10 +50,6 @@ public:
 	T* GetScene() const;
 
     Scene* GetScene() const;
-	float GetDeltaTime() const;
-
-    template<typename T>
-    T* CreateEntity(float radius, const sf::Color& color);
 
 protected:
     virtual ~Entity() {};
@@ -65,6 +60,7 @@ protected:
 	
 private:
     void Update();
+
 
     friend class GameManager;
 };

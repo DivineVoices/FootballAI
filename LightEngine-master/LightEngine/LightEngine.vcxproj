@@ -38,7 +38,6 @@
     <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Entity.inl" />
     <None Include="GameManager.inl" />
     <None Include="Scene.inl" />
   </ItemGroup>
