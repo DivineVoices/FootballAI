@@ -12,7 +12,7 @@ void SampleScene::OnInitialize()
 	pEntity2 = CreateEntity<PlayerEntity>(100, sf::Color::Green);
 	pEntity2->SetPosition(100, 100);
 
-	pEntity3 = CreateEntity<BallEntity>(50, sf::Color::Yellow);
+	pEntity3 = CreateEntity<PlayerEntity>(50, sf::Color::Yellow);
 	pEntity3->SetPosition(640, 360);
 
 	pEntitySelected = nullptr;
@@ -38,7 +38,7 @@ void SampleScene::OnEvent(const sf::Event& event)
 	}
 }
 
-void SampleScene::TrySetSelectedEntity(Entity* pEntity, int x, int y)
+void SampleScene::TrySetSelectedEntity(PlayerEntity* pEntity, int x, int y)
 {
 	if (pEntity->IsInside(x, y) == false)
 		return;

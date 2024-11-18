@@ -10,12 +10,12 @@ class SampleScene : public Scene
 {
 	PlayerEntity* pEntity1;
 	PlayerEntity* pEntity2;
-	BallEntity* pEntity3;
+	PlayerEntity* pEntity3;
 
 	PlayerEntity* pEntitySelected;
 
 private:
-	void TrySetSelectedEntity(Entity* pEntity, int x, int y);
+	void TrySetSelectedEntity(PlayerEntity* pEntity, int x, int y);
 
 public:
 	void OnInitialize() override;
