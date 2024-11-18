@@ -28,17 +28,20 @@ void GameScene::Update()
     sf::Color darkBrown(101, 67, 33);
     sf::Color lightBrown(181, 151, 129);
 
-    // D'abord, dessiner les lignes
     Debug::DrawLine(0, zoneHeight, screenWidth, zoneHeight, sf::Color::Red);      // Ligne 1
     Debug::DrawLine(0, 2 * zoneHeight, screenWidth, 2 * zoneHeight, sf::Color::Red); // Ligne 2
 
+    int goalSize = screenWidth * 0.1;  // 10% de la largeur de l'écran
+
+    int centralZoneWidth = screenWidth * 0.8;  // 80% de la largeur de l'écran
+
     // Zone gauche (bordure)
-    Debug::DrawFilledRectangle(0, 0, 150, screenHeight, darkBrown);
+    Debug::DrawFilledRectangle(0, 0, goalSize, screenHeight, darkBrown);
 
     // Zone centrale
-    Debug::DrawFilledRectangle(150, 0, 980, screenHeight, lightBrown);
+    Debug::DrawFilledRectangle(goalSize, 0, centralZoneWidth, screenHeight, lightBrown);
 
     // Zone droite (bordure)
-    Debug::DrawFilledRectangle(1130, 0, 150, screenHeight, darkBrown);
+    Debug::DrawFilledRectangle(goalSize + centralZoneWidth, 0, goalSize, screenHeight, darkBrown);
 }
 
